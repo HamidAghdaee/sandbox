@@ -8,21 +8,33 @@ import felaRenderer from '../felaRenderer';
 
 const Page = createComponent(({ theme }) => ({
   margin: theme.space[4]
-}))
+}));
 
 const Center = createComponent(({ theme }) => ({
   margin: '0px auto'
-}))
+}));
 
 export default ({ children, title = 'Design-Engineering Sandbox' }) => (
-  <StyleProvider renderer={felaRenderer}> 
+  <StyleProvider renderer={felaRenderer}>
     <div>
       <Header>
         <Center>
           <NavList>
-            <NavItem><Link href='/'><a>Index</a></Link></NavItem>
-            <NavItem><Link href='/Page1'><a>Page 1</a></Link></NavItem>
-            <NavItem><Link href='/Page2'><a>Page 2</a></Link></NavItem>
+            <NavItem>
+              <Link href="/">
+                <a>Index</a>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link href="/motion">
+                <a>Motion</a>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link href="/404">
+                <a>404</a>
+              </Link>
+            </NavItem>
           </NavList>
         </Center>
       </Header>

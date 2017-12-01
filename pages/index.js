@@ -1,7 +1,7 @@
 import Layout from '../components/layout';
 
 export default () => (
-  <Layout>
+  <Layout title="Sandbox">
     <div>Welcome!</div>
   </Layout>
 );
