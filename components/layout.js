@@ -6,7 +6,7 @@ import { Heading } from 'cf-component-heading';
 import { createComponent } from 'cf-style-container';
 
 const Page = createComponent(({ theme }) => ({
-  margin: theme.space[4]
+  padding: theme.space[5]
 }));
 
 const Center = createComponent(({ theme }) => ({

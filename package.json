@@ -12,6 +12,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@cloudflare/cf-component-signup": "^4.7.8",
+    "cf-builder-card": "^6.1.5",
+    "cf-component-button": "^7.2.5",
     "cf-component-header": "^1.3.10",
     "cf-component-heading": "^4.9.17",
     "cf-component-page": "^4.4.2",
