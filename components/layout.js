@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { StyleProvider } from 'cf-style-provider';
+import { StyleProvider } from 'cf-style-nextjs';
 import { Header, NavList, NavItem } from 'cf-component-header';
 import { Heading } from 'cf-component-heading';
 import { createComponent } from 'cf-style-container';
-import felaRenderer from '../felaRenderer';
 
 const Page = createComponent(({ theme }) => ({
   margin: theme.space[4]
@@ -15,7 +14,7 @@ const Center = createComponent(({ theme }) => ({
 }));
 
 export default ({ children, title = 'Design-Engineering Sandbox' }) => (
-  <StyleProvider renderer={felaRenderer}>
+  <StyleProvider>
     <div>
       <Header>
         <Center>

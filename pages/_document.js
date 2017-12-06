@@ -1,27 +1,10 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import { renderToSheetList } from 'fela-dom';
-import felaRenderer from '../felaRenderer';
+import { getInitialProps, getStyles } from 'cf-style-nextjs';
 
 export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
-    const page = renderPage();
-    const sheetList = renderToSheetList(felaRenderer);
-    felaRenderer.clear();
-    return {
-      ...page,
-      sheetList
-    };
-  }
+  static getInitialProps = getInitialProps();
 
   render() {
-    const styleNodes = this.props.sheetList.map(({ type, media, css }) => (
-      <style
-        dangerouslySetInnerHTML={{ __html: css }}
-        data-fela-type={type}
-        key={`${type}-${media}`}
-        media={media}
-      />
-    ));
     return (
       <html>
         <Head>
@@ -31,9 +14,13 @@ export default class MyDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
-          <style>{`*{ box-sizing: border-box; } body { margin: 0} html { font-family: 'Open Sans', sans-serif; }`}</style>
-          {styleNodes}
+          <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans"
+            rel="stylesheet"
+          />
+          <style
+          >{`*{ box-sizing: border-box; } body { margin: 0} html { font-family: 'Open Sans', sans-serif; }`}</style>
+          {getStyles(this.props)}
         </Head>
         <body>
           <Main />
