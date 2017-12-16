@@ -19,7 +19,14 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <style
-          >{`*{ box-sizing: border-box; } body { margin: 0} html { font-family: 'Open Sans', sans-serif; }`}</style>
+            dangerouslySetInnerHTML={{
+              __html: `
+                *{ box-sizing: border-box; }
+                body { margin: 0}
+                html { font-family: 'Open Sans', sans-serif; }
+               `
+            }}
+          />
           {getStyles(this.props)}
         </Head>
         <body>
