@@ -14,13 +14,20 @@ export default class MyDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+                *{ box-sizing: border-box; }
+                body { margin: 0; }
+                html { font-family: 'Open Sans', sans-serif; }
+               `
+            }}
+          />
+          {getStyles(this.props)}
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans"
             rel="stylesheet"
           />
-          <style
-          >{`*{ box-sizing: border-box; } body { margin: 0} html { font-family: 'Open Sans', sans-serif; }`}</style>
-          {getStyles(this.props)}
         </Head>
         <body>
           <Main />
