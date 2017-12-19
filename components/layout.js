@@ -13,6 +13,10 @@ const Center = createComponent(({ theme }) => ({
   margin: '0px auto'
 }));
 
+const BigBox = createComponent(props => ({
+  backgroundColor: props.theme.color.dust
+}));
+
 export default ({ children, title = 'Design-Engineering Sandbox' }) => (
   <StyleProvider>
     <div>
@@ -22,6 +26,11 @@ export default ({ children, title = 'Design-Engineering Sandbox' }) => (
             <NavItem>
               <Link href="/">
                 <a>Index</a>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link href="/saa-stuff">
+                <a>SAA Stuff</a>
               </Link>
             </NavItem>
             <NavItem>
@@ -37,10 +46,12 @@ export default ({ children, title = 'Design-Engineering Sandbox' }) => (
           </NavList>
         </Center>
       </Header>
-      <Page>
-        <Heading size={1}>{title}</Heading>
-        {children}
-      </Page>
+      <BigBox>
+        <Page>
+          <Heading size={1}>{title}</Heading>
+          {children}
+        </Page>
+      </BigBox>
     </div>
   </StyleProvider>
 );

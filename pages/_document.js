@@ -22,12 +22,16 @@ export default class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `
                 *{ box-sizing: border-box; }
-                body { margin: 0}
+                body { margin: 0; }
                 html { font-family: 'Open Sans', sans-serif; }
                `
             }}
           />
           {getStyles(this.props)}
+          <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
