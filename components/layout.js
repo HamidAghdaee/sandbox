@@ -13,29 +13,11 @@ const Center = createComponent(({ theme }) => ({
   margin: '0px auto'
 }));
 
-export default ({ children, title = 'Design-Engineering Sandbox' }) => (
+export default ({ children, title = 'Github Take Home Challenge' }) => (
   <StyleProvider>
     <div>
       <Header>
-        <Center>
-          <NavList>
-            <NavItem>
-              <Link href="/">
-                <a>Index</a>
-              </Link>
-            </NavItem>
-            <NavItem>
-              <Link href="/motion">
-                <a>Motion</a>
-              </Link>
-            </NavItem>
-            <NavItem>
-              <Link href="/404">
-                <a>404</a>
-              </Link>
-            </NavItem>
-          </NavList>
-        </Center>
+        <span />
       </Header>
       <Page>
         <Heading size={1}>{title}</Heading>
